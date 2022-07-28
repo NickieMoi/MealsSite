@@ -1,8 +1,9 @@
 import './App.css';
 import { Component } from 'react';
-import Home from '../src/components/Home';
-import { Router, Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
+import Home from './components/Home'
+import CommentForm from './components/CommentForm';
 
 class App extends Component {
 
@@ -26,7 +27,7 @@ class App extends Component {
   }
 
   render() {
-    let { isLoaded, items } = this.state;
+    let { isLoaded } = this.state;
     if (!isLoaded) {
       return (
         <div>
@@ -34,35 +35,15 @@ class App extends Component {
         </div>)
     } else {
       return (
-        <div className="App">
-          <div id='header'>
-            My<span>Meal</span>pal
-          </div>
-          <div id='head'></div>
-            <ul>
-              {items.map(item => (
-                <li key={item.idMeal}>
-                  <li>Meal: <b>{item.strMeal}</b> </li>
-                  <li>Category: <i>{item.strCategory}</i></li>
-                  <li><img src={item.strMealThumb} style={{ height: 100 + `%`, width: 100 + `%` }}></img></li>
-                  <li id='last'><b>Recipe</b> :<p>{item.strInstructions}</p></li>
-                  <li className='list'><input class="form-control" type="text" placeholder="Add review"></input><button type='button' className='btn btn-lg btn-success'>Submit</button></li>
-                  <li><button type='button' className='btn btn-md btn-outline-success order'>Order</button></li>
-                  <li id='buttons'><img src="https://img.icons8.com/emoji/38/000000/thumbs-up.png"/><img src="https://img.icons8.com/emoji/38/000000/thumbs-down-emoji.png"/></li>
-
-                </li>
-              ))};
-            </ul>
-        </div>
+        <Router>
+          <Routes>
+            <Route exact path='/'  element={<Home items={this.state.items}/>}/>
+            <Route exact path='/comment' element={<CommentForm/>}/>
+          </Routes>
+        </Router>
+        
       );
     }
-return(
-  <Router>
-    <div>
-    <Home/>
-    </div>
-  </Router>
-)
   }
 };
 

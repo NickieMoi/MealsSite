@@ -16,7 +16,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=f')
+    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
       .then(res => res.json())
       .then(json => {
         this.setState({

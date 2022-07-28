@@ -40,7 +40,7 @@ class App extends Component {
             <Route exact path='/'  element={<Home items={this.state.items}/>}/>
             <Route exact path='/comment' element={<CommentForm/>}/>
           </Routes>
-        </Router>
+        </Router> 
         
       );
     }

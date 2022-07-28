@@ -1,0 +1,54 @@
+*{
+    background-color: white;
+}
+ul{
+    list-style: none;
+    text-align: left;
+    column-count: 3;
+}
+
+ul>li{
+    margin: 4%;
+    border: 3px solid yellow;
+    box-shadow: 0px 0px 3px 3px yellow;
+    padding: 5%;
+    margin-bottom: 15%;
+}
+
+.order{
+    width: 100%;
+}
+
+li>button{
+    margin: 1%;
+}
+
+.list{
+    display: flex;
+    flex-direction: row;
+}
+
+#buttons{
+    float: right;
+}
+
+#last{
+    margin-bottom: 4%;
+}
+#header{
+text-align: center;
+padding: 2% 0% 1% 0%;
+font-size: 30px;
+font-weight: 800;
+background-color: green;
+}
+
+#header>span{
+    color: yellow;
+    background-color: green;
+}
+
+#head{
+    background-color:yellow;
+    padding: 0% 0% 2% 0%;
+}

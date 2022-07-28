@@ -1,13 +1,28 @@
-import React, { Component } from "react";
+import React, { Component, useEffect, useState } from "react";
 
-class CommentForm extends Component{
-    render(){
+function CommentForm(){
+    const [setComment]=useState([])
+
+    function handleNewComment(newComment){
+    const serverOptions={
+        method:"POST",
+        header:{
+            "Content-Type":"application/json"
+        },
+        body:JSON.stringify(newComment)
+    }
+    fetch('http://localhost:8080/comments/',serverOptions)
+    .then(res=>res.json())
+    .then(aComment=>setComment(comments=>[...comments,aComment]))
+    .catch(err=>console.log(err))
+}
+    
         return(
-            <React.Fragment>
+            <div>
                 <div>Comment form</div>
-            </React.Fragment>
+            </div>
         )
     }
-}
+
 
 export default CommentForm

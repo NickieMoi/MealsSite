@@ -1,4 +1,5 @@
-import React, { Component, useEffect, useState } from "react";
+import React, {useState } from "react";
+
 
 function CommentForm(){
     const [setComment]=useState([])
@@ -16,13 +17,19 @@ function CommentForm(){
     .then(aComment=>setComment(comments=>[...comments,aComment]))
     .catch(err=>console.log(err))
 }
-    
+
+
+
         return(
             <div>
-                <div>Comment form</div>
+                
+                <form>
+                    <h5>Title: </h5><input className="form-control"placeholder="Title"></input>
+                    <h5>Comment: </h5><input className="form-control" name="comment"placeholder="Comment"></input>
+                    <button type='button' className='btn btn-md btn-outline-success order'>Order</button>
+                </form>
             </div>
         )
-    }
-
-
+        }
+    
 export default CommentForm

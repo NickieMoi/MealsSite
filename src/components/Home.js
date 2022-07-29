@@ -41,7 +41,7 @@ render(){
                       <li><img src={item.strMealThumb} style={{ height: 100 + `%`, width: 100 + `%` }}></img></li>
                       <li id='last'><b>Recipe</b> :<p>{item.strInstructions}</p></li>
                       <form onSubmit={this.handleSubmit}>
-                      <li className='list'><input class="form-control" type="text" placeholder="Add review here" value={this.state.value} onChange={this.handleChange}></input><button type='submit' className='btn btn-lg btn-success'>Submit</button></li></form>
+                      <li className='list'><input className="form-control" type="text" placeholder="Add review here" value={this.state.value} onChange={this.handleChange}></input><button type='submit' className='btn btn-lg btn-success'>Submit</button></li></form>
                       <h4>{this.state.value}</h4>
                       <li><button type='button' className='btn btn-md btn-outline-success order'>Order</button></li>
                       <li id='buttons'><img src="https://img.icons8.com/emoji/38/000000/thumbs-up.png"/><img src="https://img.icons8.com/emoji/38/000000/thumbs-down-emoji.png"/></li>

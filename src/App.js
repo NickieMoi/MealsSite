@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import Home from './components/Home'
 import CommentForm from './components/CommentForm';
-
+import SingleItem from './components/SingleItem';
 class App extends Component {
 
   constructor(props) {
@@ -16,12 +16,12 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=a')
+    fetch('https://cryptic-dawn-66364.herokuapp.com/meals')
       .then(res => res.json())
       .then(json => {
         this.setState({
           isLoaded: true,
-          items: json.meals
+          items: json
         })
       });
   }
@@ -38,7 +38,8 @@ class App extends Component {
         <Router>
           <Routes>
             <Route exact path='/'  element={<Home items={this.state.items}/>}/>
-            <Route exact path='/comment' element={<CommentForm/>}/>
+            <Route exact path='/comment/:id' element={<CommentForm items={this.state.items}/>}/>
+            <Route exact path= '/' element={< SingleItem items={this.state.items}/>}/>
           </Routes>
         </Router> 
         

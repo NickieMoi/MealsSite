@@ -25,6 +25,7 @@ A Two single page website for a Meal Menu .
 ### Live Link
 - Click this link to view the live application [https://meals-site-liart.vercel.app/]
 - Click this link to view the live application [https://meals-site-liart.vercel.app/]
+- Click this link to view the project blog/descripion application [https://github.com/NickieMoi/project-Readme.]
 ### Technology  Used
 
 * HTML - which was used to develope the structure off the pages.
